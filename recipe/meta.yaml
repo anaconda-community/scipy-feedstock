@@ -63,10 +63,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}              # [unix]
+    - git
   host:
-    - libblas
-    - libcblas
-    - liblapack
+    - openblas-devel
     - python
     - cython
     - meson-python    # [unix]
@@ -101,9 +100,7 @@ outputs:
         # https://pav.iki.fi/blog/2017-10-08/pywingfortran.html#building-python-wheels-with-fortran-for-windows
         - {{ compiler('m2w64_fortran') }}        # [win]
       host:
-        - libblas
-        - libcblas
-        - liblapack
+        - openblas-devel
         - python
         - setuptools <60  # [win]
         - cython
@@ -229,9 +226,7 @@ outputs:
         - python
         - pip
         - numpy
-        - libblas         # [win]
-        - libcblas        # [win]
-        - liblapack       # [win]
+        - openblas-devel
         - setuptools <60  # [win]
         - cython          # [win]
         - pybind11        # [win]
