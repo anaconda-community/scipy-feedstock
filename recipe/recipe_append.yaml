@@ -1,0 +1,10 @@
+build:
+  script_env:
+    - MESON_ARGS="-Dlibdir=lib"
+
+requirements:
+  build:
+    - git
+  host:
+    - openblas-devel
+
